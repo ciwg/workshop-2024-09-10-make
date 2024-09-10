@@ -120,6 +120,34 @@ The first time you run 'make', it will create 'hello.txt'.  If you run
 
 ---
 
+## Example Makefile with a real-world example
+
+```make
+all: hello
+
+hello: hello.c
+    gcc -o hello hello.c
+```
+
+This Makefile will compile the 'hello.c' program into an executable named
+'hello'.  If you run 'make', it will compile 'hello.c' into 'hello'.  If
+you run 'make' again, it will do nothing, because 'hello' is up to date. BUT if you
+edit 'hello.c', 'make' will recompile 'hello.c' into 'hello'.
+
+An example hello.c program:
+
+```c
+#include <stdio.h>
+
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}
+```
+
+
+---
+
 ## Example Makefile with a chain of prerequisites
 
 ```make
@@ -143,6 +171,10 @@ If you run 'make' again, it will do nothing, because 'hello.txt' and
 
 But if you update the timestamp on 'hello.txt', 'make' will re-run the
 'bye.txt' rule, because 'bye.txt' is out of date.
+
+Hint:  The '-n' flag to 'make' will show you what commands it would
+run, without actually running them.  It's really useful for seeing
+what 'make' is doing.
 
 ---
 
