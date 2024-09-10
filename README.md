@@ -212,5 +212,6 @@ describes how Makefiles were used to automate the process of building
 and maintaining trading floors at a major international financial
 institution.  Each machine, both desktop and server, ran 'make' at
 bootup and periodically throughout the day to ensure that it was in
-the correct state, installing, updating, and configuring operating
+the correct state.  This included building binaries, even reformatting
+hard drives, and installing, updating, and configuring operating
 systems and applications as needed.
